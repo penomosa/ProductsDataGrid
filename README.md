@@ -10,5 +10,5 @@ The initial DataGrid will be displayed as the following:
 * Searchbox:
 * Select records to show on the grid. 
 * Records Pagination:
-* Gris overflow: Allowing to move right to left and left to right in a fix page view.
+* Grid overflow: Allowing to move right to left and left to right in a fix page view.
 * 
