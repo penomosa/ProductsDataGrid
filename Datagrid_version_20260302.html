@@ -1,0 +1,102 @@
+<html>
+<body>
+
+<!-- Adding fonts and other elements from Google Material Icons API -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+
+<!-- Calling JQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jspreadsheet-ce@5/dist/jspreadsheet.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jspreadsheet-ce@5/dist/index.min.js"></script>
+
+
+<script src="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.css" type="text/css" />
+<script src="https://jsuites.net/v5/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v5/jsuites.css" type="text/css" />
+
+<div>
+ <center>
+	<h1>Products DataGrid</h1>
+	<p>JS Spreadsheet Prototype/Demo/Test</p>
+ </center>
+</div>
+
+<hr/>
+
+<!-- Spreadhsheet generated here from function at the bottom -->
+<div id="spreadsheet"></div>
+
+<hr/>
+
+<div style="border: solid 1px #999;padding-left: 15px; padding-bottom: 10px;">
+    <h2>
+		<p>Additional features</p>
+	</h2>
+	<div><!-- Button to Insert New Row using JQuery -->
+		<input type="button" value="Add new row" id="button-addnewrow" />
+	</div>
+</div>
+
+<hr/>
+
+<div style="border:dotted 1px #999;padding:5px;padding-left:15px;" id="coming-soon">
+<H2>Features to implement... coming soon!</H2>
+
+<br/>
+<ul>
+ <li>Clean Spreadsheet: <input type="button" value="Reset Table" id="" /><l/i>
+ <li>Load CSV file: <input type="button" value="Import CSV" id="" /></li>
+ <li>Load data into Spreadsheet from CSV file: <input type="button" value="Load data from CSV file" id="" />. Documentaton: <a href="https://bossanova.uk/jspreadsheet/docs/data" target="_blank">Read here</a>. Sample data can be loaded from this URL: https://bossanova.uk/jspreadsheet/docs/data/jspreadsheet/demo.csv</li>
+ <li>Cells and data Editors: This will allow to mask values such as: text, dates mm/dd/yyyy, currency format $0,000.00, etc.</li>
+ <li>Use pre-defined calculated formulas on certain columns.</li>
+ <li>Use pre-defined values as Dropdowns in cells: This can be usefull booleans values as "Has Serial" (Y/N), ATF Type fields, etc.</li>
+ <li>Create new Tab to import Fasbound data via API.</li>
+ <li>Think about creating and loading new products from Fastbound UPC or MPN data.</li>
+ <li>Images: Allow embed images directly into data grid cells. It can be useful when loading images URL for eCommerce fields.</li>
+</ul>
+
+</div><!--END id"coming-soon">
+
+<!-- ##### Documentation Sources ##### -->
+<hr/>
+	<div>
+		<p><b>JSpreadsheet CE Documentation: </b><a href="https://bossanova.uk/jspreadsheet/docs/" target="_new"> https://bossanova.uk/jspreadsheet/docs/</a></p>
+		<p><b>LemonadeJS Documentation: </b><a href="https://lemonadejs.com/docs/getting-started" target="_new">https://lemonadejs.com/docs/getting-started</a></p>
+		<p><b>JSuites Documentation: </b><a href="https://jsuites.net/docs/getting-started" target="_new">https://jsuites.net/docs/getting-started</a></p>
+		<p><b>OpenETL Documentation: </b><a href="https://bossanova.uk/openetl/docs" target="_new">https://bossanova.uk/openetl/docs</a></p>
+	</div>
+
+
+
+
+<!-- ##### JSpreadSheet Functions below here ##### -->
+<script>
+
+//-- Function: Generating the Spreassheet table.
+let table = jspreadsheet(
+    document.getElementById('spreadsheet'), {
+    tabs: false,
+    toolbar: true,
+    worksheets: [{
+        minDimensions: [26,19],
+		filters: true,
+		tableOverflow: true,
+		tableWidth: "1800px",
+		search: true,
+		pagination: 20,
+        paginationOptions: [10,25,50,100],
+    }],
+});
+
+//-- Function: Adding new row to the table.
+document.getElementById("button-addnewrow").addEventListener('click', function() {
+    table[0].insertRow();
+})
+</script>
+
+
+</body>
+</html>
