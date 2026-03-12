@@ -11,4 +11,5 @@ The initial DataGrid will be displayed as the following:
 * Select records to show on the grid. 
 * Records Pagination:
 * Grid overflow: Allowing to move right to left and left to right in a fix page view.
-* 
+* Button to import CSV file.
+* * When loading CSV file, some fields should be converted to text. For instance: UPC, SKU, Zipcode.
