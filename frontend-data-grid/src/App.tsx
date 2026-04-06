@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { Spreadsheet, Worksheet } from "@jspreadsheet-ce/react";
 
 import "jspreadsheet-ce/dist/jspreadsheet.css";
