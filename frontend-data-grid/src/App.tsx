@@ -1,17 +1,14 @@
-import { useRef } from "react";
-import { Spreadsheet, Worksheet } from "@jspreadsheet-ce/react";
-
-import "jspreadsheet-ce/dist/jspreadsheet.css";
-import "jsuites/dist/jsuites.css";
+import { useState } from "react"
+import ButtonUploader from "./components/ButtonUploader"
+import DataGrid from "./components/DataGrid"
 
 export default function App() {
-    // Spreadsheet array of worksheets
-    const spreadsheet = useRef(null);
+  const [dataset, setDataset] = useState<any>(null)
 
-    // Render component
-    return (
-        <Spreadsheet ref={spreadsheet} tabs={true} toolbar={true}>
-            <Worksheet minDimensions={[14,14]} />
-        </Spreadsheet>
-    );
+  return (
+    <div className="p-4">
+      <DataGrid dataset={dataset} />
+      <ButtonUploader onData={setDataset} />
+    </div>
+  )
 }
